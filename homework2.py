@@ -48,7 +48,7 @@ def promote():
 
 
 @app.route('/results/<nickname>/<int:level>/<float:rating>')
-def bootstrap(planet_name):
+def bootstrap(nickname, level, rating):
     return f'''<!doctype html>
                 <html lang="en">
                   <head>
@@ -58,22 +58,17 @@ def bootstrap(planet_name):
                     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
                     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
                     crossorigin="anonymous">
-                    <title>Variantes of choice</title>
-                    <h1>My proposal: {planet_name}</h1>
+                    <title>Results</title>
                   </head>
                   <body>
-                    <h4>This planet is near to Earth;</h4>
-                    <div style="background-color: #71bc78" class="alert alert-primary" role="alert">
-                      <h4>There is a lot of necessary resources;</h4>
+                    <h1>Results of selection</h1>
+                    <h3>The applicant for participation in the mission {nickname}</h3>
+                    <div style="background-color: #76ff7a" class="alert alert-primary" role="alert">
+                      <h4>Congratulations! Your rating after the {level} round</h4>
                     </div>
-                    <div style="background-color: #c1caca" class="alert alert-primary" role="alert">
-                      <h4>There is water and atmosphere;</h4>
-                    </div>
-                    <div style="background-color: #dcd36a" class="alert alert-primary" role="alert">
-                      <h4>There is a small magnetic field in it;</h4>
-                    </div>
-                    <div style="background-color: #ee9086" class="alert alert-primary" role="alert">
-                      <h4>After all, it's really beautiful.</h4>
+                    <h4>is {rating}</h4>
+                    <div style="background-color: #f8f32b" class="alert alert-primary" role="alert">
+                      <h4>Good luck!</h4>
                     </div>
                   </body>
                 </html>'''
